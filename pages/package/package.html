@@ -1,0 +1,38 @@
+
+      <!-- partial -->
+     
+        <div class="content-wrapper">
+          <div class="row">
+          <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">All Packages</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Package Name</th>
+                          <th>Price</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in allPackage">
+                          <td>{{x.name | limitTo:20}}</td>
+                          <td>
+                            <label class="badge badge-success">{{x.currency.symbol}}{{x.price}}</label> 
+                          </td>
+                           <td class="text-danger">
+                            <a class="mdi-btn" ng-href="packages/{{x.id}}"><i class="mdi mdi-table-edit"></i></a>
+                            <button class="mdi-btn" ng-click="removePackage(x)"><i class="mdi mdi-delete"></i></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>          
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      

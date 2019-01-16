@@ -1,0 +1,106 @@
+<div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">All Package</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Package Name</th>
+                          <th>Price</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in allPackage">
+                          <td>{{x.name | limitTo:20}}</td>
+                          <td>
+                            <label class="badge badge-success">{{x.currency.symbol}}{{x.price}}</label> 
+                          </td>
+                           <td class="text-danger">
+                            <a class="mdi-btn" ng-href="packages/{{x.id}}"><i class="mdi mdi-table-edit"></i></a>
+                            <button class="mdi-btn" ng-click="removePackage(x)"><i class="mdi mdi-delete"></i></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>            
+                  </div>
+                </div>
+               <div class="btn-t">
+                <a class="btn btn-success btn-block" href="packages">View All
+              </a>
+              </div>       
+          </div>
+            </div>
+           
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">All Deal</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Deal Name</th>
+                          <th>Price</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                     <tbody>
+                          <tr ng-repeat="x in allDeal">
+                          <td>{{x.name | limitTo:20}}</td>
+                          <td>
+                            <label class="badge badge-success">{{x.package_id.currency.symbol}}{{x.each_ticket_cost}}</label> 
+                          </td>
+                           <td class="text-danger">
+                           <a class="mdi-btn" ng-href="deals/{{x.id}}"><i class="mdi mdi-table-edit"></i></a>
+                            <button class="mdi-btn" ng-click="removeDeals(x)"><i class="mdi mdi-delete"></i></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="btn-t">
+                <a class="btn btn-success btn-block" href="deals">View All
+              </a>
+              </div>   
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">All Catagory</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Category Name</th>
+                          <th>Description</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                     <tbody>
+                        <tr  ng-repeat="x in allCategory">
+                          <td>{{x.name  | limitTo:20}}</td>
+                          <td>
+                             <label class="badge badge-success">{{x.descriptions}}</label> 
+                          </td>
+                           <td class="text-danger">
+                            <button class="mdi-btn" ng-click="removeCategory(x)"><i class="mdi mdi-delete"></i></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="btn-t">
+                <a class="btn btn-success btn-block" href="category">View All
+              </a>
+              </div>   
+              </div>
+            </div>
+          </div>
+        </div>
