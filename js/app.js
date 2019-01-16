@@ -52,7 +52,7 @@ app.config(function($routeProvider,$locationProvider) {
 
 app.run(function($rootScope,$location) {
     var loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
-    $rootScope.userName=localStorage.getItem("userName");
+    $rootScope.userName=localStorage.getItem("user");
     $rootScope.user_type=localStorage.getItem("user_type");
     if(loginStatus) {
         console.log("i am login route",loginStatus);
