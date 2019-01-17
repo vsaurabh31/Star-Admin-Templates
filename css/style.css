@@ -16330,77 +16330,77 @@ button.mdi-btn{
 .sidebar{
   border-right: 1px solid #cccccc;
 }
-.btn-rounded1 {
+.form-group a.btn-rounded1 {
     background-color: transparent;
-    border-radius: 30px !important;
-    font-size: 12px !important;
-    padding: 15px 15px !important;
-    display: block !important;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 15px 15px;
+    display: block;
     text-transform: capitalize;
-    border: 2px solid #072F5F;
-    color: #072F5F !important;
+    border: 2px solid #33b4f5;
+    color: #33b4f5;
     font-weight: 700;
     letter-spacing: .1em;
 }
-.btn-rounded1:hover{
-    background-color: #072F5F;
-    border-radius: 30px !important;
-    font-size: 12px !important;
-    padding: 15px 15px !important;
-    display: block !important;
+.form-group a.btn-rounded1:hover{
+    background-color: #33b4f5;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 15px 15px;
+    display: block;
     text-transform: capitalize;
-    border: 2px solid #072F5F;
-    color: #fff !important;
+    border: 2px solid #33b4f5;
+    color: #fff;
     font-weight: 700;
     letter-spacing: .1em;
 }
-.btn-rounded2{
-    background-color: #072F5F;
-    border-radius: 30px !important;
-    font-size: 12px !important;
-    padding: 15px 15px !important;
-    display: block !important;
+.form-group a.btn-rounded2{
+    background-color: #33b4f5;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 15px 15px;
+    display: block;
     text-transform: capitalize;
-    border: 2px solid #072F5F;
-    color: #fff !important;
+    border: 2px solid #33b4f5;
+    color: #fff;
      font-weight: 700;
     letter-spacing: .1em;
 }
-.btn-rounded2:hover{
+.form-group a.btn-rounded2:hover{
     background-color: transparent;
-    border-radius: 30px !important;
-    font-size: 12px !important;
-    padding: 15px 15px !important;
-    display: block !important;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 15px 15px;
+    display: block;
     text-transform: capitalize;
-    border: 2px solid #072F5F;
-    color: #072F5F !important;
+    border: 2px solid #33b4f5;
+    color: #33b4f5;
      font-weight: 700;
     letter-spacing: .1em;
 }
 .btn_short{
   padding-top: .5em;
     padding-bottom: .5em;
-    padding: 14px 32px !important;
-    border-radius: 25px !important;
-    font-size: 12px !important;
+    padding: 14px 32px;
+    border-radius: 25px;
+    font-size: 12px;
     color: #fff;
     font-weight: 700;
     letter-spacing: .1em;
-    border: 2px solid #072F5F;
-    background-color: #072F5F;
+    border: 2px solid #33b4f5;
+    background-color: #33b4f5;
   }
   .btn_short:hover{
   padding-top: .5em;
     padding-bottom: .5em;
-    padding: 14px 32px !important;
-    border-radius: 25px !important;
-    font-size: 12px !important;
-    color: #072f5f;
-   border: 2px solid #072F5F;
+    padding: 14px 32px;
+    border-radius: 25px;
+    font-size: 12px;
+    color: #fff;
+    border: 2px solid #389ac6;
     font-weight: 700;
     letter-spacing: .1em;
-    background-color: transparent;
+    background-color: #389ac6;
   }
   .container1 {
     position: relative;
@@ -16408,7 +16408,7 @@ button.mdi-btn{
     margin-bottom: 20px;
     cursor: pointer;
     font-size: 15px;
-    color: #072f5f;
+    color: #33b4f5;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -16518,7 +16518,7 @@ button.mdi-btn{
 }
 .navbar.default-layout {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(120deg, rgb(61, 101, 147), #072f5f);
+        background: linear-gradient(120deg, #33b4f5, #3183ad);
     transition: background 0.25s ease;
     -webkit-transition: background 0.25s ease;
     -moz-transition: background 0.25s ease;
@@ -16542,4 +16542,14 @@ button.mdi-btn{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 5px;
+}
+.create h3{
+   background: linear-gradient(120deg, #33b4f5, #3183ad);
+    padding: 10px 12px;
+    width: 15%;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    border-radius: 25px;
+    font-size: 14px;
 }

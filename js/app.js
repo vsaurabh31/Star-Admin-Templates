@@ -54,6 +54,7 @@ app.run(function($rootScope,$location) {
     var loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
     $rootScope.userName=localStorage.getItem("user");
     $rootScope.user_type=localStorage.getItem("user_type");
+    
     if(loginStatus) {
         console.log("i am login route",loginStatus);
         $rootScope.islogin = true;
@@ -146,7 +147,7 @@ app.controller('loginCtrl', function ($scope,$http,ngNotify,$rootScope,$location
                 localStorage.setItem('user', response.data.user.first_name + ' ' + response.data.user.last_name);
                  var test = localStorage.getItem("user_type");
                  console.log(test);
-                 return  $location.path("home");
+                $location.path("home");
             }
             else if(response.data.status == 'failure') {
                 console.log("Hello")
