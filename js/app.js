@@ -786,6 +786,7 @@ app.controller('packageEditCtrl', function($scope,$routeParams,PackageService,$r
                   $rootScope.listImages = payload.data.image;
                   console.log($rootScope.listImages)
                   $rootScope.attachments.push(payload.data.attachment);
+                  $scope.formData.id = payload.data.id
                   $scope.formData.category_id = payload.data.category.id;
                   $scope.formData.subcategory_id = payload.data.subcategory.id;
                   $scope.formData.location_id = payload.data.location.id;
@@ -832,8 +833,10 @@ app.controller('packageEditCtrl', function($scope,$routeParams,PackageService,$r
            notiService.error("Please enter all fields")
        } else {
             var dataObj = {
+               "id":$routeParams.id,
                "images": $rootScope.listImages,
                "cover_image": $rootScope.attachments.toString(),
+               "id":$scope.formData.id,
                "category_id":$scope.formData.category_id,
                "currency_id":$scope.formData.currency_id,
                "location_id":$scope.formData.location_id,
@@ -861,7 +864,7 @@ app.controller('packageEditCtrl', function($scope,$routeParams,PackageService,$r
 app.controller('dealEditCtrl', function ($scope,$routeParams,$rootScope,notiService,PackageService,$location) {
     console.log("helo")
     $scope.formData = {};
-    $rootScope.attachments = [];
+    // $rootScope.attachments = [];
    console.log($routeParams)
    PackageService.getAllDeal().then(
            function (payload) {

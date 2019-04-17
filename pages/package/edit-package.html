@@ -3,6 +3,13 @@
   <div class="card-body">
     <form name="packageForm" ng-submit="updatePackage()">
 <div class="row">
+  <div class="form-group col-md-6">
+    <label for="" class="label-name">ID</label>
+    <select class="form-control" id="id" ng-model="formData.id" required>
+        <option ng-repeat="x in allPackage" ng-value="x.id">{{x.id}}</option>
+       
+    </select>
+  </div>
 <div class="form-group col-md-6">
     <label for="" class="label-name">Category ID</label>
     <select class="form-control" id="category_id" ng-model="formData.category_id" required>
