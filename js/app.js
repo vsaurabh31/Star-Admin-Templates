@@ -1,6 +1,6 @@
 var app = angular.module("hbcadminApp", ["ngRoute","ngNotify",'textAngular','ngSanitize']);
 var token = "f05a5a675fab54ca8380738eb447a0edfc990b1e";
-var urlApi="http://raffle-escale.herokuapp.com/";
+var urlApi="https://whispering-hamlet-44736.herokuapp.com/";
 app.config(function($routeProvider,$locationProvider) {
     $routeProvider
     .when("/home", {
@@ -51,7 +51,7 @@ app.config(function($routeProvider,$locationProvider) {
 });
 
 app.run(function($rootScope,$location) {
-    var loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
+    var loginStatus = localStorage.getItem('loginStatus');
     $rootScope.userName=localStorage.getItem("user");
     $rootScope.user_type=localStorage.getItem("user_type");
     
@@ -61,17 +61,18 @@ app.run(function($rootScope,$location) {
         return $location.path( "home" );
     } else {
       console.log("i am not logged in")
+      $rootScope.islogin = false;
         return $location.path( "login" );
-        $rootScope.islogin = false;
-    }
-     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-      if (loginStatus == null ) {
-        // no logged user, we should be going to #login
-        return  $location.path("login");
-      } else {
         
-      }        
-    });
+    }
+    //  $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+    //   if (loginStatus == null ) {
+    //     // no logged user, we should be going to #login
+    //     return  $location.path("login");
+    //   } else {
+        
+    //   }        
+    // });
     
 })
 app.factory('notiService', function(ngNotify) {
@@ -124,13 +125,18 @@ app.controller('loginCtrl', function ($scope,$http,ngNotify,$rootScope,$location
         };
 
         $http({
-            "url": urlApi + "account/loginUser/",
+            "url": urlApi + "users/login",
             "method": "POST",
             "data":dataObj,
+            headers : {
+                ContentType : 'application/json',    
+                "Authorization": token
+                }
         }).then(function(response) {
             $rootScope.isLoader = false;
-            console.log(response.data.status);
-            if (response.data.status == 'success') {
+            console.log("pass",response.data.status);
+            if (response.data.status == 200) {
+                console.log("dasdsad",response.data)
                 $rootScope.islogin = true;
                 console.log(response.data)
                 ngNotify.set(response.data.message, {
